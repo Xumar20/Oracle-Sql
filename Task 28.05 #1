@@ -1,0 +1,10 @@
+1. **Theoretical:** What is the difference between the INNER JOIN and LEFT JOIN in SQL?
+In SQL, both INNER JOIN and LEFT JOIN are types of join operations used to combine data from multiple tables based on a related column between them.The INNER JOIN returns only the rows that have matching values in both tables.
+In other words, we can say that an INNER JOIN returns the intersection of the two tables.It selects all the records from the left table and the matching records from the right table based on the specified column.If there are no matching values in the right table, 
+the result will contain NULL values for the columns of the right table.To summarize, an INNER JOIN only includes the matching rows from both tables, while a LEFT JOIN includes all the rows from the left table and the matching rows 
+from the right table, or NULL values if there is no match.
+
+2. **Incomplete - Practical:** Write a SQL query to fetch the names of employees who are working under a manager with manager_id '102'.
+SELECT first_name employees 
+FROM employees
+WHERE  manager_id  = 102;
