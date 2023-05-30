@@ -35,7 +35,19 @@ Description: Retrieve the employee ID, first name, department name, job title, a
 Tables: EMPLOYEES, DEPARTMENTS, JOBS, COUNTRIES
 Hint: Use FULL OUTER JOIN to combine the EMPLOYEES, DEPARTMENTS, JOBS, and COUNTRIES tables on the corresponding columns.
 
+select e.employee_id,e.first_name, d.department_name, j.job_title, c.country_name from 
+employees e full join departments d on e.department_id=d.department_id
+full join jobs j on e.job_id=j.job_id
+full join  locations l on l.location_id=d.location_id 
+full join  countries c on c.country_id=l.country_id ;
+
 Task 5:
 Description: Retrieve the employee ID, first name, department name, job title, and country name of all employees along with their corresponding department and job title information. Include employees who don't have a country assigned.
 Tables: EMPLOYEES, DEPARTMENTS, JOBS, COUNTRIES
 Hint: Use INNER JOIN to combine the EMPLOYEES, DEPARTMENTS, and JOBS tables on the corresponding columns. Then use LEFT JOIN to join the resulting table with the COUNTRIES table on the country ID column.
+
+select e.employee_id,e.first_name, d.department_name, j.job_title, c.country_name from 
+employees e full join departments d on e.department_id=d.department_id
+inner join jobs j on e.job_id=j.job_id
+inner join  locations l on l.location_id=d.location_id 
+left join  countries c on c.country_id=l.country_id ;
