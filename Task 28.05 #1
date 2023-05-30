@@ -8,3 +8,16 @@ from the right table, or NULL values if there is no match.
 SELECT first_name employees 
 FROM employees
 WHERE  manager_id  = 102;
+
+3.**Problem-Solving**: How would you use SQL to find the department with the most number of employees?
+
+select count(e.employee_id), d.department_name from employees e inner join departments d on e.department_id=d.department_id group by (d.department_name)  order by count(e.employee_id) desc fetch next 1 rows only;
+
+
+4.**Complete - Practical:** Write a SQL query to find the names of all employees who have the job title 'Sales Representative'.
+    *Hint: Use the employees table and WHERE clause to filter the job_id column.*
+    
+    select first_name from employees where job_id=(select job_id from jobs where job_title='Sales Representative');
+    
+5.*Incomplete* - Practical: Write a SQL query to get the list of all department names and the number of employees in each department.
+select count(e.employee_id), d.department_name from employees e inner join departments d on e.department_id=d.department_id group by (d.department_name) ;
