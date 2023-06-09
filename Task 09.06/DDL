@@ -1,1 +1,11 @@
+create table cities(
+city_id int primary key,
+city_name varchar(100),
+capital varchar(100)
+);
 
+alter table cities rename to worldcities;
+
+drop table worldcities;
+ALTER TABLE worldcities ADD CONSTRAINT city_id_un UNIQUE
+ (city_id, city_name,capital);
