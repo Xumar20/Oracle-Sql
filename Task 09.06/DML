@@ -1,0 +1,8 @@
+insert into worldcities values (1,'Argentina','Buenos Aires');
+insert into worldcities values (2,'Australia','Canberra');
+insert into worldcities values (3,'Austria','Vienna');
+
+UPDATE worldcities
+SET city_id = 4
+WHERE city_id=1;
+delete from worldcities;
