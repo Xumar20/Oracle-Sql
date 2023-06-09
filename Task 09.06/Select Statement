@@ -1,0 +1,11 @@
+select * from worldcities;
+select city_id, city_name from worldcities; /*Projection Clause*/
+
+select first_name,salary from employees order by salary asc;
+select first_name,salary from employees order by salary desc;
+select first_name,salary from employees order by salary desc fetch next  5 rows only ;
+select first_name,salary from employees order by 1;
+
+select * from employees;
+select department_id, round(avg(salary)) AS avg_salary from employees GROUP BY department_id;
+select department_id, round(avg(salary)) AS avg_salary from employees GROUP BY department_id having department_id=90;
