@@ -1,0 +1,22 @@
+
+/*SET1*/
+1. **Create a table**: Create a table named 'Employee_Details' with columns 'ID' (number type), 'Name' (varchar type), 'DOB' (date type), and 'Department_ID' (number type).
+2. **Insert operation**: Insert a row into the 'Employees' table where first_name is 'John', last_name is 'Doe', email is '[jdoe@mail.com](mailto:jdoe@mail.com)', and hire_date is '15-JAN-2022'.
+3. **Select with condition**: Write a SELECT statement to get the details of all the employees who were hired after '01-JAN-2020'.
+4. **Character Function**: Write a query using the INITCAP function to return all job titles from the 'Jobs' table with the first letter capitalized.
+5. **Inner Join**: Write a query to join the 'Employees' and 'Departments' tables to get the department names for all employees.
+
+
+create table employee_details(
+id number,
+name varchar(100),
+date_of_birth date,
+department_id number
+);
+
+select * from employees;
+
+select * from employees where hire_date>'01-jan-20';
+select * from jobs;
+select initcap(job_title) from jobs;
+select e.first_name, d.department_name from employees e inner join departments d  on e.department_id=d.department_id;
