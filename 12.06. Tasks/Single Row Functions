@@ -1,0 +1,16 @@
+select round(143.345,2) from dual;
+select round(123.345,-2) from dual;
+select round(avg(salary)) from employees;
+select abs(-23456) from dual;
+select abs(3456) from dual;
+select mod(456740.345) from dual;
+select trunc(34567.2) from dual;
+select LOWER(first_name) from employees;
+select UPPER(first_name) from employees;
+Select INITCAP(first_name) from employees;
+select SYSTIMESTAMP from dual;
+select sysdate from dual;
+select length(first_name) from employees;
+SELECT SUBSTR (first_name,1,5), INSTR (first_name,'a')
+FROM employees
+WHERE rownum < 5;
