@@ -1,0 +1,10 @@
+insert into customers values(1,'John', 'Doe','john@gnail.com', 34567890);               /*Mövcud cədvələ məlumatların əlavə edilməsi üçün insert əmrindən istifadə olunur*/
+insert into customers values(2,'Jane', 'Smith','Jane@gmail.com', 34567830);
+insert into orderdetails values (1,2, to_date('1990-12-12', 'yyyy-mm-dd'),23456);
+insert into orderdetails values (2,1, to_date('2000-12-12', 'yyyy-mm-dd'),256);
+commit;                                                                                 /*Commit əmri yalnız DML əmrlərindən sonra istifadə olunur,burada istifadə edilmiş commit əmri vasitəsilə insert-lər yadda saxlanılır*/
+
+update customers set  first_name='Jake' where first_name='John';                        /*Mövcud cədvələ məlumatların yenilənməsi   üçün update əmrindən istifadə olunur. Bu zaman şərt verilməsi mütləqdir */
+
+delete from customers;
+                                                                
