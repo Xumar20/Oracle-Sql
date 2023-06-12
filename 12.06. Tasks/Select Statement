@@ -1,0 +1,11 @@
+select * from employees;
+select  department_id,department_name from departments;             /*Prejection Clause*/
+select * from employees  where job_id='IT_PROG' ; 
+select * from employees  where job_id='IT_PROG' and salary=9000 ;        
+
+select avg(salary),department_id from employees group by department_id;      /*Ortalama əmək haqqının departamentlərə görə qruplaşması*/
+select avg(salary),department_id from employees group by department_id having  avg(salary)>4475;      /*Ortalama əmək haqqının departamentlərə görə qruplaşdırıldıqdan sonra filterlənməsi*/
+
+select employee_id from employees order by salary;
+select employee_id from employees order by salary desc;
+select employee_id,first_name from employees order by salary fetch next 5 rows only;
