@@ -1,0 +1,22 @@
+select count (employee_id) from employees;
+select count (*) from departments;
+select count (department_id) from departments;   /*count(*) null deyerleri nezere alir, count ise almır*/
+select round(avg(salary)) from employees;
+select max(salary) from employees;
+select min(salary) from employees where job_id='IT_PROG';
+select * from employees;
+select median(salary) from employees;
+
+
+select median(id) from 
+(select 1 as id from dual
+union 
+select 2 as id from dual
+union
+select 3 as id from dual
+union
+select 4 as id from dual
+union
+select 5 as id from dual
+union
+select 6 as id from dual) ;
