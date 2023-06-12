@@ -1,0 +1,28 @@
+create table customers(
+customer_id int primary key,
+first_name varchar(100),
+last_name varchar(100),
+email varchar(100),
+phone varchar(100)
+);
+
+create table orders(
+order_id int,
+customer_id int,
+order_date date,
+totalamount number
+);
+
+alter table orders rename to orderdetails; /*Mövcud cədvəlin adının dəyişdirilməsi*/
+
+ALTER TABLE orderdetails ADD CONSTRAINT Fk_customer_id
+FOREIGN KEY (customer_id) REFERENCES customers(customer_id);    /*Mövcud olan cədvələ Foreign Key Constraintin əlavə edilməsi (outline)*/
+
+ALTER TABLE orderdetails
+ADD PRIMARY KEY (order_id);                                     /*Mövcud olan cədvələ Primary Key Constraintin əlavə edilməsi (outline)*/
+
+ALTER TABLE Customers
+ADD UNIQUE (first_name,last_name,email,phone);                  /*Mövcud olan cədvəldə unique contraint üzərindən candidate keyin tətbiqi */
+
+drop table customers;                                           /*Biz orders cədvəlini silmək üçün ilk öncə Customers cədvəlini silməliyik 
+                                                                  çünki customers cədvəlində istinad olunmuş sütün var*/
