@@ -1,0 +1,12 @@
+/*DDL Operation (DROP)*/
+drop table new_employees;
+/*DML Operation (DELETE)*/
+delete from employees where department_id=10;
+/*Subquery*/
+select first_name from employees where salary>(select avg(salary) from employees);
+/*Set Operator (UNION)*/
+select department_id from employees
+union
+select department_id from departments;
+/*Join (INNER JOIN)*/
+select e.first_name || e.last_name as fullname,d.department_name from employees e inner join departments d  on e.department_id=d.department_id ;
