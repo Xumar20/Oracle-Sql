@@ -1,0 +1,19 @@
+select first_name,last_name from employees where salary between 4200 and 6000
+union
+select first_name,last_name from employees where salary between 4800 and 6000;
+
+select first_name,last_name from employees where salary between 4200 and 6000
+union all
+select first_name,last_name from employees where salary between 4800 and 6000;
+
+select last_name,first_name from employees where salary between 4200 and 6000
+union
+select first_name,last_name from employees where salary between 4800 and 6000;
+
+select first_name,last_name from employees where department_id between 50 and 100
+minus
+select first_name,last_name from employees where department_id between 90 and 100;
+
+select first_name,last_name from employees where salary between 4200 and 6000
+intersect
+select first_name,last_name from employees where salary between 4800 and 6000;
