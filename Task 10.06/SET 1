@@ -1,0 +1,9 @@
+/*DDL*/
+create table new_employees as select * from employees where 1=2;
+select * from new_employees;
+/*SELECT STATEMENT*/
+select first_name,last_name,department_id from employees;
+/*Single Function (Character)*/
+select lower(first_name) from employees;
+/*Aggregate Function*/
+select avg(salary) from employees;
