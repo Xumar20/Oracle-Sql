@@ -1,0 +1,18 @@
+/*DDL Operation (CREATE INDEX)*/
+create index salary_i on employees(salary);
+
+/*DML Operation (INSERT with SELECT)*/
+create table high_salary_employees as select * from employees where 1=2;
+insert into high_salary_employees select * from employees where salary>10000;
+select* from high_salary_employees;
+select * from employees;
+
+/*SELECT Statement with ORDER BY clause*/
+select first_name,last_name,salary from employees order by salary desc;
+
+/*Single Function (Date)*/
+select e.first_name, j.start_date,j.end_date, (extract( year from j.end_date)-extract (year from j.start_date)) as difference from employees e left join job_history j on e.employee_id=j.employee_id ;
+
+/*Aggregate Function with GROUP BY*/
+select * from employees;
+select department_name,sum(salary) from employees e inner join departments d on e.department_id=d.department_id  group by department_name;
