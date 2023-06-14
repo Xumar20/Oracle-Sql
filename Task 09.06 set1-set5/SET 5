@@ -1,0 +1,16 @@
+select * from employee_details;
+select * from employees;
+
+drop table project_details; 
+/*Insert operation with select: Insert into 'Employee_Details' table all the employees from 'Employees' table where the hire date is after '01-JAN-2021'.*/
+
+insert into employee_details (id,name,department_id,salary) select employee_id,first_name,department_id,salary from employees where hire_date>'01-JAN-21';
+
+/*Select with group by: Write a SELECT statement to get the job_id and the number of employees working in each job_id from the 'Employees' table.*/
+
+select * from employees;
+select count(job_id), job_id from  employees group by job_id;
+/*Set operator: Write a query using UNION to return the job_ids from both the 'Jobs' and 'Job_History' tables.*/
+select job_id from jobs
+union 
+select job_id from job_history;
