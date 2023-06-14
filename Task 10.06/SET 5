@@ -1,0 +1,16 @@
+/*DDL Operation (ALTER TABLE MODIFY COLUMN)*/
+alter table employees modify commission_pct number(3,2);
+/*DML Operation (UPDATE with WHERE)*/
+select * from employees where last_name='King';
+
+update employees set department_id=20 where last_name='King';
+
+/*Subquery in FROM clause*/
+select  d.department_name,max(salary) from employees e inner join departments d on e.department_id=d.department_id  group by department_name;
+/*Set Operator (MINUS)*/
+select department_id from departments 
+minus 
+select department_id from employees;
+
+/*Join (LEFT OUTER JOIN)*/
+select e.first_name, d.department_name from employees e left join departments d on e.employee_id=d.department_id;
