@@ -1,0 +1,15 @@
+/*DDL Operation (ALTER)*/
+alter table new_employees add middle_name varchar(100);
+
+/*DML Operation (UPDATE)*/
+select * from employees;
+update employees set salary=salary*1.1 where salary in (select salary from employees);
+
+/*SELECT Statement with WHERE clause*/
+select first_name from employees where salary>5000;
+
+/*Single Function (Number)*/
+select ceil(avg(salary)) from employees;
+
+/*Conversion Function*/
+select  to_char(hire_date,'YYYY-MM-DD') HIRE_DATE from employees;
