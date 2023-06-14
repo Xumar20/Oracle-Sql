@@ -1,0 +1,23 @@
+alter table project_details add  project_status varchar(100);
+
+select * from project_details;
+insert into project_details values(1,'Airplane',to_date('12-05-2020','dd-mm-yyyy'),to_date('12-05-2023','dd-mm-yyyy'),2,'startpoint');
+insert into project_details values(20,'School',to_date('12-06-2023','dd-mm-yyyy'),to_date('14-06-2023','dd-mm-yyyy'),30,'beginner');
+insert into project_details values(3,'HR',to_date('13-05-2022','dd-mm-yyyy'),to_date('14-07-2023','dd-mm-yyyy'),40,'startpoint');
+insert into project_details values(4,'Hotel',to_date('12-05-2020','dd-mm-yyyy'),to_date('14-03-2023','dd-mm-yyyy'),50,'medium');
+
+select * from project_details;
+
+/*Update operation: Update the 'Project_Details' table to set 'Project_Status' as 'Completed' for all projects whose 'End_Date' is before today's date.*/
+update project_details set project_status='Completed' where end_date<'14-JUL-23';
+
+/*Subquery: Write a query to find employees who earn more than the average salary.*/
+select * from employees;
+
+/*Conversion Function: Write a query to convert the hire date in the 'Employees' table to a string in the 'DD-MON-YYYY' format.*/
+select first_name from employees where salary >(select avg(salary) from employees);
+SELECT first_name,
+       TO_CHAR (hire_date, 'DD-MON-YYYY') HIRE_DATE from employees;
+
+/*Full Outer Join: Write a query to get all employees and all departments, regardless of whether the employee is assigned to a department or not.*/
+select e.first_name,d.department_name from employees e full join departments d on e.department_id=d.department_id;
