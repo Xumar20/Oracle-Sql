@@ -1,0 +1,11 @@
+select e.first_name emp_name, m.first_name man_name from employees e join employees m on e.manager_id=m.employee_id;
+
+SELECT e.employee_id, e.first_name, j.job_title
+FROM employees e
+NATURAL JOIN jobs j;      
+
+SELECT e.employee_id, e.first_name, d.department_name
+FROM employees e
+JOIN departments d USING (department_id);
+
+select e.first_name,d.department_name from employees e inner join departments d on e.department_id=d.department_id;
