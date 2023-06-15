@@ -1,0 +1,17 @@
+/*SELECT with DISTINCT clause*/
+select * from employees;
+select  distinct j.job_title from employees e  inner join jobs j on e.job_id=j.job_id;
+
+/*SELECT with ALIAS*/
+select employee_id AS Employee_ID, first_name First_Name  from employees;
+select * from employees;
+
+/*SELECT with ORDER BY clause*/
+select first_name from employees order by 1 asc;
+
+/*SELECT with GROUP BY clause*/
+select j.job_title,sum(e.salary) from employees  e inner join jobs j on e.job_id=j.job_id group by j.job_title;
+select * from jobs;
+
+/*SELECT with LIMIT clause*/
+select first_name, salary from employees order by 2 desc fetch next 5 rows only;
