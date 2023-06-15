@@ -1,0 +1,16 @@
+/*SELECT with multiple JOINS*/
+select e.first_name emp_name, m.first_name man_name, nvl(d.department_name,'yoxdur')   from employees e left join employees m on e.manager_id=m.employee_id left join departments d on e.department_id=d.department_id ;
+
+/*SELECT with WHERE and OR clause*/
+select first_name, job_id from employees where job_id='IT_PROG' or job_id='SA_REP';
+/*SELECT with Aggregate Function and GROUP BY clause*/
+select avg(e.salary) as avgsalary, j.job_title from employees e inner join jobs j on e.job_id=j.job_id group by(j.job_title);
+
+/*SELECT with Subquery in WHERE clause*/
+
+select first_name from employees where salary  > (select avg(salary) from employees);
+
+/*SELECT with UNION clause*/
+select department_id from employees
+union 
+select department_id from departments;
