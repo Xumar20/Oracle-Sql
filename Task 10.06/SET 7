@@ -1,0 +1,17 @@
+/*SELECT with JOIN and ON clause*/
+select * from departments;
+select e.first_name || e.last_name as full_name, d.department_name, l.location_id from employees e inner join departments d on e.department_id=d.department_id 
+inner join locations l on d.location_id=l.location_id;
+
+/*SELECT with WHERE and LIKE clause*/
+select first_name from employees where first_name like 'A%';
+SELECT FIRST_NAME FROM EMPLOYEES;
+
+/*SELECT with WHERE and IN clause*/
+select first_name,department_id from employees where department_id in(10,20,30);
+
+/*SELECT with WHERE and BETWEEN clause*/
+select first_name, salary from employees where salary between 5000 and 10000;
+
+/*SELECT with Aggregate Function and HAVING clause*/
+select count(e.job_id), j.job_title from employees e inner join jobs j on e.job_id=j.job_id group by j.job_title having count(e.job_id)>5;
