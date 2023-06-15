@@ -1,0 +1,22 @@
+/*SELECT with JOIN and USING clause*/
+
+SELECT  e.first_name || e.last_name, d.department_name
+FROM employees e
+JOIN departments d USING (department_id);
+
+/*SELECT with CASE statement*/
+
+select salary,
+CASE
+    when salary>2000 and salary<7000 THEN 'Low'
+    when salary>7000 and salary<15000 THEN 'Middle'
+    when salary>15000 and salary<25000 THEN 'High' 
+END as x
+from employees;
+        
+/*SELECT with Subquery in SELECT clause*/
+
+select max(salary) , d.department_name from employees e inner join departments d on e.department_id=d.department_id group by d.department_name;
+
+/*SELECT with WHERE and NULL clause*/
+select first_name from employees where commission_pct is null;
