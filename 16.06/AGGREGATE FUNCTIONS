@@ -1,0 +1,23 @@
+select  count(employee_id) from employees;
+select count(department_id),department_id from employees group by department_id;
+select sum(min_salary) from jobs;
+select sum(salary),department_id from employees group by department_id;
+
+select min(salary) from employees where department_id=90;
+select min(salary),department_id from employees group by department_id;
+select max(salary) from employees where job_id='IT_PROG';
+select median(min_salary) from jobs;
+
+select median(id) from 
+(select 1 as id from dual
+union 
+select 2 as id from dual
+union
+select 3 as id from dual
+union
+select 4 as id from dual
+union
+select 5 as id from dual
+union
+select 6 as id from dual) ;
+select round(avg(e.salary)),department_name from employees e inner join departments d on e.department_id=d.department_id group by d.department_name;
