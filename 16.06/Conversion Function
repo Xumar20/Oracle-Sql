@@ -1,0 +1,22 @@
+SELECT
+  TO_DATE( '5 Jan 2017', 'DD MON YYYY' )
+FROM
+  dual;
+  
+  select salary,
+CASE
+    when salary>2000 and salary<7000 THEN 'Low'
+    when salary>7000 and salary<15000 THEN 'Middle'
+    when salary>15000 and salary<25000 THEN 'High' 
+END as x
+from employees;
+
+
+SELECT
+  TO_CHAR( sysdate, 'MM-yyyy-DD' )
+FROM
+  dual;
+  
+  select to_char(sysdate) from dual;
+  
+  select nvl(department_id,'0') from employees;
