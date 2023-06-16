@@ -1,0 +1,21 @@
+select j.job_title,first_name from employees e  inner join jobs j on  e.job_id=j.job_id;
+select e.first_name emp, m.first_name man from employees e inner join employees m on e.manager_id=m.employee_id;
+select * from employees natural join jobs;
+SELECT e.employee_id, e.first_name, d.department_name
+FROM employees e
+JOIN departments d USING (department_id);
+select j.job_title,e.first_name from employees e join jobs j using(job_id);
+
+select  d.department_name, round(avg(e.salary)) from employees e inner join departments d on e.department_id=d.department_id group by d.department_name ;
+
+select d.department_name,e.employee_id from departments d 
+left join employees e on e.employee_id=d.department_id;
+
+select e.employee_id, j.start_date, j.end_date from employees e  
+right join job_history j on e.employee_id=j.employee_id ;
+
+select d.department_name,e.employee_id from employees e full join 
+departments d on e.department_id=d.department_id order by 1 nulls first;
+
+select j.job_title, d.department_name from departments d cross join jobs j ;
+
