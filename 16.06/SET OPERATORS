@@ -1,0 +1,29 @@
+select department_id from employees 
+union 
+select department_id from departments;
+
+select department_id from departments
+minus
+select employee_id from employees;
+
+select job_id from employees
+intersect 
+select job_id from jobs;
+
+select department_id from employees 
+union all
+select department_id from departments;
+
+select first_name,last_name from employees where salary between 4200 and 6000
+union all
+select first_name,last_name from employees where salary between 4800 and 6000
+union
+select first_name,last_name from employees where salary between 4800 and 6000
+intersect
+select first_name,last_name from employees where salary between 3000 and 6000
+minus
+select first_name,last_name from employees where salary between 5000 and 6000;
+
+select department_id from departments where department_id between 10 and 20
+minus
+select employee_id from employees where department_id between 20 and 40;
