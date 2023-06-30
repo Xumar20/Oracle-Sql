@@ -1,0 +1,10 @@
+//set 4.2//
+insert into employees_backup values(207,'Khumar','Mirzayeva','xmirza',5030300, to_date('21-JAN-09','DD-MM-YYYY'),'AD-PRE',43234,1,2,90,1);
+//SET4.3//
+select first_name, round(salary,2) from employees;
+//set 4.4//
+Aggregate Functions: Find the department with the highest number of employees in the "employees" table.
+select count(department_id), department_id from employees group by department_id order by  count(department_id) desc fetch first 1 rows only ;
+//set 4.5//
+SELECT employee_id, TO_CHAR(hire_date, 'YYYY-"Q"') AS hire_date_quarter
+FROM employees;
