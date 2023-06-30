@@ -1,0 +1,21 @@
+//set2.1//
+select upper(job_id) from jobs;
+
+Find all employees in the "employees" table whose salary is above the average salary of their respective departments.
+select * from employees;
+
+//set2.2//
+select * from employees e where salary> 
+(select avg(salary) from employees where department_id=e.department_id group by(department_id));
+
+//set2.3//
+Set Operators: Use the UNION operator to create a list of all unique job_ids from both the "employees" and "job_history" tables.
+select job_id from employees 
+union
+select job_id from job_history;
+
+//set2.4//
+delete from employees_backup where salary<3000;
+
+//set2.5//
+alter table  employees_backup add performance_score int;
