@@ -1,0 +1,25 @@
+//5.1//
+select employee_id from employees
+MINUS
+select manager_id from employees;
+//5.2//
+select e.first_name, e.last_name, j.job_title from employees e inner join jobs j on e.job_id=j.job_id;
+//5.3//
+
+select first_name,last_name,salary ,department_id from employees where salary not in
+(select salary from employees order by salary desc fetch first 5 rows only)  ;
+
+select first_name,last_name,salary ,department_id from employees where employee_id not in 
+(select employee_id from employees order by salary desc fetch first 5 rows only);             //same with the first one//
+
+//5.4//
+create table employee_projects(
+project_id int,
+employee_id int,
+start_date date,
+end_date date,
+role varchar(50)
+);
+//5.5//
+select * from employees_backup;
+update employees_backup set commission_pct=0 where commission_pct is null;
