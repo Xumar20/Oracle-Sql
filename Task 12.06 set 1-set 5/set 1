@@ -1,0 +1,26 @@
+//set1//
+create table employees_backup as select * from employees where 1=2; 
+
+//set1.2//
+create table employees_backup as select * from employees;
+select * from employees_backup;
+update employees_backup set salary =salary*1.5 where EXTRACT(YEAR FROM hire_date) = 2000;
+
+//set1.3//
+List all employees in the "employees" table who were hired on a Friday
+
+SELECT *
+FROM employees
+WHERE TO_CHAR(hire_date, 'DAY') = 'Friday';
+
+//set1.4//
+select job_id,sum(salary) from employees group by job_id;
+
+//set1.5//
+Using a LEFT JOIN, list all departments
+from the "departments" table and the count of employees in each department from the "employees" table.
+
+select * from employees;
+select * from departments;
+
+select d.department_name, count(e.employee_id) from departments d left join employees e on d.department_id=e.department_id group by d.department_name;
