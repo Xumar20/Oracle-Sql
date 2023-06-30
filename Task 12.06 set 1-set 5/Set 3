@@ -1,0 +1,24 @@
+//set3.1//
+select last_name,job_id,department_id from employees where last_name like 'S%';
+
+//SET3.3//
+Find the highest, lowest, and average number of employees in each job from the "employees" table.
+select count(employee_id),job_id from employees group by job_id order by count(employee_id) desc fetch first 1 rows only;
+
+//set3.4//
+
+select e.first_name, e.last_name,d.department_name from employees e full join departments d on e.department_id=d.department_id;
+//set3.5//
+Write a query that selects all employees in the 
+"employees" table who work in a department with more than 80 employees.
+
+
+SELECT first_name,department_id
+FROM employees
+WHERE department_id IN (
+  SELECT department_id
+  FROM employees
+  GROUP BY department_id
+  HAVING COUNT(*) > 80
+);
+
