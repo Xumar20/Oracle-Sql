@@ -1,0 +1,24 @@
+//8.1//
+/*Select all fields from the "employees" table for employees whose first name contains the letter 'e' at least twice*/
+select * from employees where first_name like '%e%e%';
+
+//8.2//
+/*Write a query that RIGHT JOINs the "employees" 
+table with the "departments" table and displays the employee's first name, last name, and department name.*/
+
+select e.first_name,e.last_name,d.department_name 
+from employees e right join departments d on e.department_id=d.department_id;
+
+//8.3//
+/* Rename the "employee_projects" table to "projects".*/
+
+alter table employee_projects rename to projects;
+
+//8.4//
+/* For each job_id in the "employees" table, find the difference between the maximum and minimum salaries.*/
+select job_id ,max(salary)-min(salary) as difference from employees group by job_id;
+
+//8.5//
+/*Insert a new record into the "projects" table. Use your own discretion for the values.*/
+select * from projects;
+insert into projects values(1,210, to_date('12-06-2000',' DD-MM-YYYY'),to_date('12-JAN-2010',' DD-MM-YYYY'),'Data Analyst',2);
