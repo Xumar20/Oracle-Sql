@@ -1,0 +1,17 @@
+//7.1//
+
+DELETE FROM employees_backup
+WHERE EXTRACT(MONTH FROM hire_date) BETWEEN 7 AND 12;
+rollback;
+
+
+//7.2//
+select country_id from locations
+union all 
+select country_id from countries;
+
+
+//7.5//
+
+SELECT e.job_id , j.job_title from   employees e inner join jobs j on e.job_id=j.job_id
+WHERE salary = (  SELECT MAX(salary)  FROM employees WHERE salary < (  SELECT MAX(salary) FROM employees));
