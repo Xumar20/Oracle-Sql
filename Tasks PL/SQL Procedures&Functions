@@ -1,0 +1,35 @@
+Task: Create a procedure called proc_display that simply prints "Hello from Procedure!".
+CREATE OR REPLACE PROCEDURE proc_display AS
+BEGIN
+  DBMS_OUTPUT.PUT_LINE('Hello from Procedure!');
+END;
+BEGIN
+  proc_display;
+END;
+
+Task: Create a procedure proc_greet that takes a v_name parameter and prints "Hello, [v_name]!".
+create or  replace procedure proc_greet(v_name in varchar2) as
+begin
+  DBMS_OUTPUT.PUT_LINE('Hello, ' || v_name || '!');
+end;
+/
+begin
+  proc_greet('Khumar');
+end;
+/
+Task: Create a function func_square that takes a number as an argument and returns its square.
+
+Task: Write a function func_upper that takes a string and returns its uppercase version.
+-----------------CREATE OR REPLACE FUNCTION func_upper(str IN VARCHAR2) RETURN VARCHAR2 AS
+BEGIN
+  RETURN UPPER(str);
+END;
+set serveroutput on
+DECLARE
+  input_str VARCHAR2(100);
+  result_str VARCHAR2(100);
+BEGIN
+  input_str := 'Khumar';
+  result_str := func_upper(input_str);
+  DBMS_OUTPUT.PUT_LINE('Uppercase: ' || result_str);
+END;-----------------
